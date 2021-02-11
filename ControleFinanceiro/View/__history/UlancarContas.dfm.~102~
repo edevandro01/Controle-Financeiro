@@ -1,0 +1,356 @@
+object FrmLancarContas: TFrmLancarContas
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Lan'#231'amento de Contas'
+  ClientHeight = 484
+  ClientWidth = 951
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlButtons: TPanel
+    Left = 0
+    Top = 0
+    Width = 951
+    Height = 90
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 960
+    object btnNovo: TButton
+      Left = 138
+      Top = 27
+      Width = 129
+      Height = 40
+      Caption = 'Novo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnNovoClick
+    end
+    object btnAlterar: TButton
+      Left = 273
+      Top = 26
+      Width = 129
+      Height = 40
+      Caption = 'Alterar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnAlterarClick
+    end
+    object btnCancelar: TButton
+      Left = 408
+      Top = 26
+      Width = 129
+      Height = 40
+      Caption = 'Cancelar'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = btnCancelarClick
+    end
+    object btnSalvar: TButton
+      Left = 543
+      Top = 26
+      Width = 129
+      Height = 40
+      Caption = 'Salvar'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      OnClick = btnSalvarClick
+    end
+    object btnExcluir: TButton
+      Left = 678
+      Top = 26
+      Width = 129
+      Height = 40
+      Caption = 'Excluir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+      OnClick = btnExcluirClick
+    end
+  end
+  object pnlLancamentos: TPanel
+    Left = 0
+    Top = 90
+    Width = 951
+    Height = 304
+    Align = alClient
+    Color = clInfoBk
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGreen
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    PopupMenu = PopupMenu1
+    TabOrder = 1
+    ExplicitHeight = 295
+    object Label1: TLabel
+      Left = 48
+      Top = 37
+      Width = 39
+      Height = 16
+      Caption = 'C'#243'digo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 126
+      Top = 37
+      Width = 33
+      Height = 16
+      Caption = 'Conta'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 68
+      Top = 95
+      Width = 53
+      Height = 24
+      Caption = 'Valor:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 12
+      Top = 6
+      Width = 194
+      Height = 19
+      Caption = 'F2 - Pesquisa de Contas'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clMaroon
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 504
+      Top = 37
+      Width = 97
+      Height = 16
+      Caption = 'Data Vencimento'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbEmEdicao: TLabel
+      Left = 12
+      Top = 267
+      Width = 103
+      Height = 24
+      Caption = 'Em Edi'#231#227'o'
+      Color = clGreen
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGreen
+      Font.Height = -20
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object dbedtContaCodigo: TDBEdit
+      Left = 48
+      Top = 59
+      Width = 73
+      Height = 27
+      DataField = 'IDCONTA'
+      DataSource = dmPrincipal.dsContasLancadas
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnExit = dbedtContaCodigoExit
+    end
+    object dbedtValor: TDBEdit
+      Left = 126
+      Top = 92
+      Width = 209
+      Height = 32
+      DataField = 'VALORCONTA'
+      DataSource = dmPrincipal.dsContasLancadas
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -20
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object dbedtVencimento: TDBEdit
+      Left = 504
+      Top = 59
+      Width = 113
+      Height = 27
+      TabStop = False
+      DataField = 'VENCIMENTO'
+      DataSource = dmPrincipal.dsContasLancadas
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+    end
+    object dbedtContaDescricao: TDBEdit
+      Left = 126
+      Top = 59
+      Width = 372
+      Height = 27
+      DataField = 'DESCRICAO'
+      DataSource = dmPrincipal.dsContasLancadas
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnExit = dbedtContaCodigoExit
+    end
+    object calendarValor: TCalendarView
+      Left = 656
+      Top = 1
+      Height = 302
+      Align = alRight
+      Date = 44229.000000000000000000
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      HeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
+      HeaderInfo.DaysOfWeekFont.Color = clWindowText
+      HeaderInfo.DaysOfWeekFont.Height = -13
+      HeaderInfo.DaysOfWeekFont.Name = 'Segoe UI'
+      HeaderInfo.DaysOfWeekFont.Style = []
+      HeaderInfo.Font.Charset = DEFAULT_CHARSET
+      HeaderInfo.Font.Color = clWindowText
+      HeaderInfo.Font.Height = -20
+      HeaderInfo.Font.Name = 'Segoe UI'
+      HeaderInfo.Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      ExplicitHeight = 344
+    end
+  end
+  object pnlLancamentoLote: TPanel
+    Left = 0
+    Top = 394
+    Width = 951
+    Height = 90
+    Align = alBottom
+    TabOrder = 2
+    ExplicitTop = 399
+    object lbQuantidadeMeses: TLabel
+      Left = 134
+      Top = 35
+      Width = 365
+      Height = 19
+      Caption = 'Informe quantidade de lan'#231'amentos(Meses):'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object btnGerarLancamentosLote: TButton
+      Left = 634
+      Top = 19
+      Width = 206
+      Height = 53
+      Caption = 'Gerar Lan'#231'amentos Lote'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnGerarLancamentosLoteClick
+    end
+    object edtQtdLancamentos: TEdit
+      Left = 506
+      Top = 30
+      Width = 97
+      Height = 27
+      Alignment = taCenter
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 424
+    Top = 258
+    object GerarLanamentosemlote1: TMenuItem
+      Caption = 'Gerar Lan'#231'amentos em lote'
+    end
+  end
+end

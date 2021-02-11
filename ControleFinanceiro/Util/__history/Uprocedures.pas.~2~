@@ -1,0 +1,17 @@
+unit Uprocedures;
+
+interface
+
+uses
+  FireDAC.Comp.Client, Vcl.StdCtrls;
+
+  procedure PesqLocate(cds:TFDQuery; edtPesq:TEdit; campoPesq:string);
+
+implementation
+
+procedure PesqLocate(cds:TFDQuery; edtPesq:TEdit; campoPesq:string);
+begin
+
+end;
+
+end.

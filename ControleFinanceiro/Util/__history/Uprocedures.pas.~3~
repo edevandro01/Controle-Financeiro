@@ -1,0 +1,20 @@
+unit Uprocedures;
+
+interface
+
+uses
+  FireDAC.Comp.Client, Vcl.StdCtrls;
+
+  procedure PesqLocate(cds:TFDQuery; edtPesq:TEdit; campoPesq:string);
+
+implementation
+
+procedure PesqLocate(cds:TFDQuery; edtPesq:TEdit; campoPesq:string);
+begin
+  cds.Locate(campoPesq, edtPesq.Text,[loPartialKey, loCaseInsensitive]);
+  cds.Filtered := False;
+  cds.Filter := 'UPPER(' + campoPesq + ') LIKE' + UpperCase(QuotedStr('%'+ Trim(edtPesq.Text) + '%'));
+  cds.Filtered := True;
+end;
+
+end.

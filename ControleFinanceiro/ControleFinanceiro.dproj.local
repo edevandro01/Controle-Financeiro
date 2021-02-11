@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/01/22 16:09:44.000.279,=C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/01/22 16:13:40.000.410,C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Projetos\ControleFinanceiro\View\Uprincipal.pas</Transaction>
+    <Transaction>2021/01/22 16:13:40.000.410,C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Projetos\ControleFinanceiro\View\Uprincipal.dfm</Transaction>
+    <Transaction>2021/01/22 16:14:13.000.579,C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\ControleFinanceiro\ControleFinanceiro.dproj</Transaction>
+    <Transaction>2021/01/30 14:15:28.000.455,=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/30 14:21:53.000.098,D:\Projetos\ControleFinanceiro\View\Ucontas.pas=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/30 14:21:53.000.098,D:\Projetos\ControleFinanceiro\View\Ucontas.dfm=D:\Projetos\ControleFinanceiro\Unit1.dfm</Transaction>
+    <Transaction>2021/01/30 21:46:21.000.352,=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/30 21:47:23.000.186,D:\Projetos\ControleFinanceiro\Model\UdmPrincipal.dfm=D:\Projetos\ControleFinanceiro\Unit1.dfm</Transaction>
+    <Transaction>2021/01/30 21:47:23.000.186,D:\Projetos\ControleFinanceiro\Model\UdmPrincipal.pas=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/31 00:01:56.000.545,=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/31 00:03:17.000.832,D:\Projetos\ControleFinanceiro\View\UlancarContas.pas=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/31 00:03:17.000.832,D:\Projetos\ControleFinanceiro\View\UlancarContas.dfm=D:\Projetos\ControleFinanceiro\Unit1.dfm</Transaction>
+    <Transaction>2021/01/31 19:57:18.000.369,=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/31 19:57:51.000.341,D:\Projetos\ControleFinanceiro\Util\Uprocedures.pas=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/31 20:51:24.000.634,=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/01/31 22:11:20.000.111,D:\Projetos\ControleFinanceiro\Util\Umetodos.pas=D:\Projetos\ControleFinanceiro\Util\Uprocedures.pas</Transaction>
+    <Transaction>2021/02/01 18:25:27.000.956,=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/02/02 15:10:56.000.911,=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/02/02 15:14:28.000.127,D:\Projetos\ControleFinanceiro\View\UpagtoContas.dfm=D:\Projetos\ControleFinanceiro\Unit1.dfm</Transaction>
+    <Transaction>2021/02/02 15:14:28.000.127,D:\Projetos\ControleFinanceiro\View\UpagtoContas.pas=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/02/09 18:43:10.487,=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2021/02/09 18:48:39.036,D:\Projetos\ControleFinanceiro\View\UlancarContasLote.dfm=D:\Projetos\ControleFinanceiro\Unit1.dfm</Transaction>
+    <Transaction>2021/02/09 18:48:39.036,D:\Projetos\ControleFinanceiro\View\UlancarContasLote.pas=D:\Projetos\ControleFinanceiro\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

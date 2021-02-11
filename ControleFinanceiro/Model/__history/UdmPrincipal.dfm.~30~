@@ -1,0 +1,123 @@
+object dmPrincipal: TdmPrincipal
+  OldCreateOrder = False
+  Height = 235
+  Width = 487
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\Projetos\ControleFinanceiro\BancoDados\CONTROLEFINAN' +
+        'CEIRO.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'Port=3050'
+      'Server=localhost'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 224
+    Top = 40
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 72
+    Top = 40
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 352
+    Top = 48
+  end
+  object fdqProcurar: TFDQuery
+    Connection = FDConnection
+    Left = 224
+    Top = 160
+  end
+  object dsContasLancadas: TDataSource
+    DataSet = fdqContasLancadas
+    Left = 72
+    Top = 99
+  end
+  object fdqContasLancadas: TFDQuery
+    Active = True
+    Connection = FDConnection
+    SQL.Strings = (
+      'select'
+      '    l.*,'
+      '    c.descricao,'
+      
+        '    iif(l.pagamento is null, current_date - l.vencimento, 0) as ' +
+        'STATUS,'
+      '    case'
+      
+        '      when iif(l.pagamento is null, current_date - l.vencimento,' +
+        ' 0) = 0 then '#39'Pagamento Realizado'#39
+      
+        '      when iif(l.pagamento is null, current_date - l.vencimento,' +
+        ' 0) > 0 then '#39'Conta Atrasada'#39
+      
+        '      else '#39'Faltam '#39' || (iif(l.pagamento is null, current_date -' +
+        ' l.vencimento, 0)*-1) || '#39' dias para vencer'#39
+      '    end as informacao '
+      'from lancamentos l'
+      '    inner join contas c on(c.id = l.idconta)'
+      'order by l.Vencimento')
+    Left = 224
+    Top = 99
+    object fdqContasLancadasID: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object fdqContasLancadasIDCONTA: TIntegerField
+      Alignment = taCenter
+      FieldName = 'IDCONTA'
+      Origin = 'IDCONTA'
+      Required = True
+    end
+    object fdqContasLancadasVALOR: TFMTBCDField
+      FieldName = 'VALOR'
+      Origin = 'VALOR'
+      currency = True
+      Precision = 18
+      Size = 2
+    end
+    object fdqContasLancadasVENCIMENTO: TDateField
+      Alignment = taCenter
+      FieldName = 'VENCIMENTO'
+      Origin = 'VENCIMENTO'
+    end
+    object fdqContasLancadasPAGAMENTO: TDateField
+      Alignment = taCenter
+      FieldName = 'PAGAMENTO'
+      Origin = 'PAGAMENTO'
+    end
+    object fdqContasLancadasDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Origin = 'DESCRICAO'
+      ProviderFlags = []
+      Size = 250
+    end
+    object fdqContasLancadasPAGO: TStringField
+      FieldName = 'PAGO'
+      Origin = 'PAGO'
+      FixedChar = True
+      Size = 1
+    end
+    object fdqContasLancadasSTATUS: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'STATUS'
+      Origin = 'STATUS'
+      ProviderFlags = []
+      ReadOnly = True
+    end
+    object fdqContasLancadasINFORMACAO: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'INFORMACAO'
+      Origin = 'INFORMACAO'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 44
+    end
+  end
+end
